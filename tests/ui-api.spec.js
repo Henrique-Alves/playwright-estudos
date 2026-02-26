@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 import { InventoryPage } from '../pages/inventory.page';
-import { usersMock } from '../mocks/users.mock.js';
 import { UsersClient } from '../api/users.client.js';
+import { buildUsers } from '../builders/user.builder.js';
 
 test('Test completo: UI + API', async ({ page, request }) => {
   const login = new LoginPage(page);
@@ -27,6 +27,7 @@ test('Test completo: UI + API', async ({ page, request }) => {
 });
 
 test('Teste de api mockada: UI + API mockado', async ({ page }) => {
+    const usersMock = buildUsers(5); //gera 5 usuários fake
 
   // intercepta qualquer chamada para users
   await page.route('**/users', async route => {

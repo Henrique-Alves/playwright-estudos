@@ -1,5 +1,6 @@
 {
   "name": "playwright-estudos",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +13,7 @@
     "@types/node": "^25.3.0"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.3.0",
     "joi": "^18.0.2"
   }
 }
