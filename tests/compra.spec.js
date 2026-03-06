@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/base.fixture';
 
-test('fluxo completo de compra', async ({ loginPage, inventoryPage }) => {
+test('@smoke fluxo completo de compra', async ({ loginPage, inventoryPage }) => {
     await loginPage.goto();
     await loginPage.login('standard_user', 'secret_sauce');
 

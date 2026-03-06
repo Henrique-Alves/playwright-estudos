@@ -1,7 +1,7 @@
 import { LoginPage } from '../pages/login.page';
 import { test, expect } from '../fixtures/base.fixture';
 
-test('login com sucesso', async ({ page }) => {
+test('@smoke login com sucesso', async ({ page }) => {
   const login = new LoginPage(page);
 
   await login.goto();
@@ -10,7 +10,7 @@ test('login com sucesso', async ({ page }) => {
   await expect(page).toHaveURL(/inventory/);
 });
 
-test('Validar pagina de login', async ({ loginPage, inventoryPage }) => {
+test('@smoke Validar pagina de login', async ({ loginPage, inventoryPage }) => {
   await loginPage.goto();
 
   await expect(inventoryPage.inputUser).toBeVisible();
