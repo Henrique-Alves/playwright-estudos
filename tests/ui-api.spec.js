@@ -4,7 +4,7 @@ import { InventoryPage } from '../pages/inventory.page';
 import { UsersClient } from '../api/users.client.js';
 import { buildUsers } from '../builders/user.builder.js';
 
-test('@regressio Test completo: UI + API', async ({ page, request }) => {
+test('@regression Test completo: UI + API', async ({ page, request }) => {
   const login = new LoginPage(page);
   const inventory = new InventoryPage(page);
   const usersApi = new UsersClient(request);
@@ -26,7 +26,7 @@ test('@regressio Test completo: UI + API', async ({ page, request }) => {
   console.log('API users:', users.length);
 });
 
-test('@regressio Teste de api mockada: UI + API mockado', async ({ page }) => {
+test('@regression Teste de api mockada: UI + API mockado', async ({ page }) => {
     const usersMock = buildUsers(5); //gera 5 usuários fake
 
   // intercepta qualquer chamada para users
